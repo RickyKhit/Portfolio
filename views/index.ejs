@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">Portfolio</a>
+        <div class="nav-links">
+          <a href="/" class="active">Home</a>
+          <a href="/projects">Projects</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="banner">
+        <h1>Hello, I'm Nyein Chann Khit</h1>
+        <p>and I'm still learning about coding...</p>
+      </section>
+
+      <section>
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+          <% featuredProjects.forEach(project => { %>
+          <div class="project-card">
+            <img
+              src="<%= project.image %>"
+              alt="<%= project.title %>"
+              class="project-image"
+            />
+            <div class="project-info">
+              <h3><%= project.title %></h3>
+              <p><%= project.description %></p>
+              <div class="project-actions">
+                <a
+                  href="<%= project.demoUrl %>"
+                  class="btn btn-primary"
+                  target="_blank"
+                  >Live Demo</a
+                >
+                <a
+                  href="<%= project.codeUrl %>"
+                  class="btn btn-outline"
+                  target="_blank"
+                  >View Code</a
+                >
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+        <div style="text-align: center; margin-top: 2rem">
+          <a href="/projects" class="btn btn-primary">View All Projects</a>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
